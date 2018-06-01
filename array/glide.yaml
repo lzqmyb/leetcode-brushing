@@ -1,0 +1,6 @@
+package: leetcode/array
+import: []
+testImport:
+- package: github.com/smartystreets/goconvey
+  subpackages:
+  - convey
