@@ -1,7 +1,7 @@
-package array
+package eazy
 
 func FindMaxConsecutiveOnes(nums []int) int {
-	var result  int
+	var result int
 
 	if len(nums) == 0 {
 		panic("nums lenth is zero")
@@ -30,7 +30,7 @@ func FindMaxConsecutiveOnesBetter(nums []int) int {
 	count := 0
 	length := len(nums)
 
-	for i := 0; i< length; i++{
+	for i := 0; i < length; i++ {
 		if nums[i] == 1 {
 			count++
 		} else {

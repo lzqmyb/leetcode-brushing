@@ -1,4 +1,4 @@
-package array
+package eazy
 
 func SingleNumber(nums []int) int {
 	m := map[int]bool{}
@@ -11,7 +11,7 @@ func SingleNumber(nums []int) int {
 		}
 	}
 
-	for k,v := range m {
+	for k, v := range m {
 		if v {
 			return k
 		} else {
@@ -22,14 +22,14 @@ func SingleNumber(nums []int) int {
 }
 
 func SingleNumberBetter(nums []int) int {
-	if (len(nums) == 0) {
+	if len(nums) == 0 {
 		panic("no Single nums")
 	}
 
 	result := 0
 
 	for _, v := range nums {
-		result ^=v
+		result ^= v
 	}
 
 	return result

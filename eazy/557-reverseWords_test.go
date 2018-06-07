@@ -1,11 +1,11 @@
-package str
+package eazy
 
 import (
-	"testing"
 	. "github.com/smartystreets/goconvey/convey"
+	"testing"
 )
 
-func TestReverseWords(t *testing.T)  {
+func TestReverseWords(t *testing.T) {
 	Convey("reverse words", t, func() {
 
 		in := "Let's take LeetCode contest"
@@ -27,4 +27,3 @@ func TestReverseWords(t *testing.T)  {
 //	result := reverseWords(in)
 //
 //}
-

@@ -1,4 +1,4 @@
-package array
+package eazy
 
 func RemoveElements(head *ListNode, val int) *ListNode {
 
@@ -7,7 +7,7 @@ func RemoveElements(head *ListNode, val int) *ListNode {
 	}
 
 	result := &ListNode{}
-	for head != nil &&head.Val == val {
+	for head != nil && head.Val == val {
 		head = head.Next
 	}
 	result = head
@@ -16,10 +16,8 @@ func RemoveElements(head *ListNode, val int) *ListNode {
 		return nil
 	}
 
-
 	var beforeNode = head
 	head = head.Next
-
 
 	for head != nil {
 		if head.Val == val {
@@ -63,7 +61,7 @@ func rewrite(head *ListNode, val int) *ListNode {
 func RemoveElementsBetter(head *ListNode, val int) *ListNode {
 	var current_addr *ListNode
 	fake_head := ListNode{
-		Val: 0,
+		Val:  0,
 		Next: head,
 	}
 	current_addr = &fake_head

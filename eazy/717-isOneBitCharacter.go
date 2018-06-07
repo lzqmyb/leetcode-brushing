@@ -1,4 +1,4 @@
-package array
+package eazy
 
 func isOneBitCharacter(bits []int) bool {
 	if len(bits) == 1 {

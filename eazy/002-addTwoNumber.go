@@ -1,18 +1,18 @@
-package array
+package eazy
 
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) (result *ListNode) {
 	result = &ListNode{0, nil}
-	if l1 == nil && l2 ==nil {
+	if l1 == nil && l2 == nil {
 		return result
 	}
 	return getNumbers(l1, l2, 0, result, result)
 }
 
-func getNumbers(l1 *ListNode, l2 *ListNode, carry int,current *ListNode, result *ListNode) *ListNode {
+func getNumbers(l1 *ListNode, l2 *ListNode, carry int, current *ListNode, result *ListNode) *ListNode {
 
 	sum := 0
 	switch {
-	case l1 != nil && l2!= nil:
+	case l1 != nil && l2 != nil:
 		sum = l1.Val + l2.Val
 	case l1 != nil:
 		sum = l1.Val
@@ -21,7 +21,7 @@ func getNumbers(l1 *ListNode, l2 *ListNode, carry int,current *ListNode, result 
 	}
 	current.Val = (sum + carry) % 10
 	carry = (sum + carry) / 10
-	if (l1 == nil || l1.Next == nil) && (l2 == nil ||l2.Next == nil) && carry == 0 {
+	if (l1 == nil || l1.Next == nil) && (l2 == nil || l2.Next == nil) && carry == 0 {
 		return result
 	}
 	current.Next = &ListNode{}
@@ -34,32 +34,31 @@ func getNumbers(l1 *ListNode, l2 *ListNode, carry int,current *ListNode, result 
 	return getNumbers(l1, l2, carry, current.Next, result)
 }
 
-
 func AddTwoNumbersBetter(l1 *ListNode, l2 *ListNode) (result *ListNode) {
 	carry := 0
 	sum := 0
 
 	p := &ListNode{
-		Val:0,
-		Next:nil,
+		Val:  0,
+		Next: nil,
 	}
 	head := p
 
 	for l1 != nil || l2 != nil || carry != 0 {
 		sum = carry
 
-		if (l1 != nil) {
+		if l1 != nil {
 			sum = sum + l1.Val
 			l1 = l1.Next
 		}
 
-		if (l2 != nil) {
+		if l2 != nil {
 			sum = sum + l2.Val
 			l2 = l2.Next
 		}
 
 		p.Next = &ListNode{
-			Val: sum % 10,
+			Val:  sum % 10,
 			Next: nil,
 		}
 		carry = sum / 10
@@ -106,6 +105,3 @@ func addTwoNumbersBetterBetter(l1 *ListNode, l2 *ListNode) *ListNode {
 	}
 	return head.Next
 }
-
-
-

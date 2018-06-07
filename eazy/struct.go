@@ -1,7 +1,13 @@
-package array
+package eazy
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Rigth *TreeNode
+}
 
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 
