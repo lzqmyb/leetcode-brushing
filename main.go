@@ -12,5 +12,11 @@ func main()  {
 	//result = array.SingleNumberBetter([]int{4,1,2,1,2})
 
 	//fmt.Println(result)
+	l1 := make([]int, 4)
+	println(len(l1))
+	ints := append(l1, 1 )
+	println(len(ints))
+
+
 }
 
